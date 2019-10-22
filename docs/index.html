@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <link rel="icon" href="site/Tracey_icon.png">
+    <title>Tracey</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">    
+    <link rel="stylesheet" href="site/style.css">
+    <script src="site/jquery-3.4.1.min.js"></script>
+  </head>
+  
+  <body class="">
+    <script>
+      document.body.className += ' fade-out';     
+    </script>
+  
+    <div class="header">
+      <img src="site/Tracey.png">
+    </div>
+    
+    <div class="content">
+      <p>Tracey is a free application whose purpose is to help with log file monitoring and analysis. It provides viewing and monitoring features for multiple files simultaneously, plus on the fly filtering. Tracy is not a text editor, but a log viewer, designed to handle very large files in an efficient way. For this reason, the editing features are disabled. This also helps preventing the accidental damaging of the original files.</p>
+      <p>While it is possible to load large files entirely into memory, this becomes unfeasable past several GBs, due to the high amount of memory needed and increased loading times. Tracy provides ways of opening only parts of the file, either by file position or line number, allowing working with very large files which cannot be opened with standard text editors.</p>
+      <p>Tracy provides filtering using logical operators, which can be combined with regular expressions or wildcards. This make even the most complicated search conditions easy to create and understand.</p>
+      
+      <div style="margin-top:50px; margin-bottom:30px;">
+        <a href="https://www.dropbox.com/s/bfhdw75if29ejn2/Tracey.zip?dl=1"><img id="download" style="vertical-align:middle;" src="site/Download.png" title="Download Tracey"></a>
+      </div>
+      
+      <p class="license" style="font-weight:bold">MIT License</p>
+      <p class="license">Copyright (c) 2019 Claudiu Arseniu</p>
+      <p class="license">Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+      <p class="license">The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+      <p class="license">THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      
+      <div style="margin-top:50px; margin-bottom:50px;">
+        <a href="https://github.com/carseniu/Tracey" target="_blank"><img style="vertical-align:middle;" src="site/GitHub.png"></a>
+      </div>
+    </div>
+    
+    <script>
+      $(function() {
+        $('body').removeClass('fade-out');
+      });
+    </script>
+  
+</body></html>

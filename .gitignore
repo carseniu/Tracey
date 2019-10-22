@@ -1,0 +1,8 @@
+.vs
+x64
+.Tracey
+GeneratedFiles
+Tracey.dat
+*.qch
+*.qhc
+Tracey.sln.*

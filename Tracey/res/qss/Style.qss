@@ -1,0 +1,430 @@
+QCheckBox {
+  spacing: 5px;
+}
+QCheckBox::indicator {
+  width: 16px;
+  height: 16px;
+}
+QCheckBox:disabled {
+  color: #afafaf;
+}
+QCheckBox::indicator:unchecked {
+  image: url(:/Application/img/CheckBoxUnchecked.png);
+}
+QCheckBox::indicator:unchecked:hover {
+  image: url(:/Application/img/CheckBoxUnchecked.png);
+}
+QCheckBox::indicator:unchecked:pressed {
+  image: url(:/Application/img/CheckBoxUnchecked.png);
+}
+QCheckBox::indicator:unchecked:disabled {
+  image: url(:/Application/img/CheckBoxUncheckedDisabled.png);
+}
+QCheckBox::indicator:checked {
+  image: url(:/Application/img/CheckBoxChecked.png);
+}
+QCheckBox::indicator:checked:hover {
+  image: url(:/Application/img/CheckBoxChecked.png);
+}
+QCheckBox::indicator:checked:pressed {
+  image: url(:/Application/img/CheckBoxChecked.png);
+}
+QCheckBox::indicator:checked:disabled {
+  image: url(:/Application/img/CheckBoxCheckedDisabled.png);
+}
+
+QComboBox {
+  border: 1px solid %3;
+  selection-color: #000000;
+  selection-background-color: #b7dbff;
+}
+QComboBox:disabled {
+  border: 1px solid #afafaf;
+  color: gray;
+  background: white;
+}
+QComboBox QAbstractItemView {
+  border: 1px solid %3;
+}
+QComboBox::drop-down {
+  border-left: 1px solid %3;
+  background: %2;
+}
+QComboBox::drop-down:on {
+  background: %2;
+}
+QComboBox::drop-down:disabled {
+  border-left: 1px solid #afafaf;
+  background: #dcdcdc;
+}
+QComboBox::down-arrow {
+  image: url(:/Application/img/ArrowDown.png);
+}
+QComboBox::down-arrow:on {
+  image: url(:/Application/img/ArrowDown.png);
+}
+QComboBox::down-arrow:disabled {
+  image: url(:/Application/img/ArrowDownDisabled.png);
+}
+
+QDialog {
+  background: %1;
+}
+
+QGroupBox {
+  border: 1px solid %3;
+  margin-top: 6px;
+  padding-top: 5px;
+}
+QGroupBox::title {
+  subcontrol-origin: margin;
+  left: 10px;
+  padding: 0px 5px 0px 5px;
+}
+QGroupBox:disabled {
+  color: #afafaf;
+  border: 1px solid #afafaf;
+  margin-top: 6px;
+  padding-top: 5px;
+}
+
+QLabel:disabled {
+  color: #afafaf;
+}
+
+QLineEdit {
+  border: 1px solid %3;
+  selection-color: #000000;
+  selection-background-color: #b7dbff;
+}
+QLineEdit:disabled {
+  border: 1px solid #afafaf;
+}
+
+QListView {
+  border: 1px solid %3;
+  padding: 1px;
+}
+QListView:disabled {
+  padding: 1px;
+  border: 1px solid #afafaf;
+  color: gray;
+  background: white;
+}
+
+QMenu {
+  border: 1px solid %4;
+  background-color: #ffffff;
+  margin-top: 1px;
+  padding: 2px;
+}
+QMenu::icon {
+  padding: 1px;
+}
+QMenu::item {
+  min-width: 100px;
+  padding: 2px 5px 2px 20px;
+  border: 1px solid transparent;
+}
+QMenu::item:selected {
+  background-color: %2;
+  border: 1px solid %4;
+}
+QMenu::separator {
+  height: 1px;
+  background: #6a8bab;
+  margin: 1px 5px 1px 5px;
+}
+
+QProgressBar#TraceWidgetProgressBar {
+  border: transparent;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+QProgressBar#TraceWidgetProgressBar::chunk {
+  background: #ff9900;
+}
+
+QProgressBar#SearchProgressDialogProgressBar {
+  border: 1px solid #228cd4;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+QProgressBar#SearchProgressDialogProgressBar::chunk {
+  background: #ff9900;
+}
+
+QPushButton {
+  border: 1px solid %3; 
+  background: %2;
+}
+QPushButton:hover:!pressed {
+  border: 1px solid %3;
+  background: #ffffff;
+}
+QPushButton:pressed {
+  border: 1px solid %3;
+  background: #ffffff;
+}
+
+QRadioButton {
+  height: 20px;
+}
+QRadioButton::indicator {
+  width: 16px;
+  height: 16px;
+}
+QRadioButton:disabled {
+  color: #afafaf;
+}
+QRadioButton::indicator:unchecked {
+  image: url(:/Application/img/RadioButtonUnchecked.png);
+}
+QRadioButton::indicator:unchecked:hover {
+  image: url(:/Application/img/RadioButtonUnchecked.png);
+}
+QRadioButton::indicator:unchecked:pressed {
+  image: url(:/Application/img/RadioButtonUnchecked.png);
+}
+QRadioButton::indicator:unchecked:disabled {
+  image: url(:/Application/img/RadioButtonUncheckedDisabled.png);
+}
+QRadioButton::indicator:checked {
+  image: url(:/Application/img/RadioButtonChecked.png);
+}
+QRadioButton::indicator:checked:hover {
+  image: url(:/Application/img/RadioButtonChecked.png);
+}
+QRadioButton::indicator:checked:pressed {
+  image: url(:/Application/img/RadioButtonChecked.png);
+}
+QRadioButton::indicator:checked:disabled {
+  image: url(:/Application/img/RadioButtonCheckedDisabled.png);
+}
+
+QScrollBar:horizontal {
+  border: 1px solid transparent;
+  background: transparent;
+  height: 15px;
+  margin: 0px 15px 0 15px;
+}
+QScrollBar::handle:horizontal {
+  border: 1px solid %3;
+  background: %2;
+  min-width: 30px;
+  margin: -1px 1px -1px 1px;
+}
+QScrollBar::add-line:horizontal {
+  border: 1px solid %3;
+  background: %2;
+  width: 14px;
+  subcontrol-position: right;
+  subcontrol-origin: margin;
+  image: url(:/Application/img/ArrowRight.png);
+}
+QScrollBar::sub-line:horizontal {
+  border: 1px solid %3;
+  background: %2;
+  width: 14px;
+  subcontrol-position: left;
+  subcontrol-origin: margin;
+  image: url(:/Application/img/ArrowLeft.png);
+}
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+  background: none;
+}
+
+QScrollBar:vertical {
+  border: 1px solid transparent;
+  background: transparent;
+  width: 15px;
+  margin: 15px 0 15px 0;
+}
+QScrollBar::handle:vertical {
+  border: 1px solid %3;
+  background: %2;
+  min-height: 30px;
+  margin: 1px -1px 1px -1px;
+}
+QScrollBar::add-line:vertical {
+  border: 1px solid %3;
+  background: %2;
+  height: 14px;
+  subcontrol-position: bottom;
+  subcontrol-origin: margin;
+  image: url(:/Application/img/ArrowDown.png);
+}
+QScrollBar::sub-line:vertical {
+  border: 1px solid %3;
+  background: %2;
+  height: 14px;
+  subcontrol-position: top;
+  subcontrol-origin: margin;
+  image: url(:/Application/img/ArrowUp.png);
+}
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+  background: none;
+}
+
+QScrollBar#SmallScrollBar:horizontal {
+  border: 1px solid transparent;
+  background: transparent;
+  height: 10px;
+  margin: 0px 10px 0 10px;
+}
+QScrollBar#SmallScrollBar::handle:horizontal {
+  border: 1px solid %3;
+  background: %2;
+  min-width: 30px;
+  margin: -1px 1px -1px 1px;
+}
+QScrollBar#SmallScrollBar::add-line:horizontal {
+  border: 1px solid %3;
+  background: %2;
+  width: 9px;
+  subcontrol-position: right;
+  subcontrol-origin: margin;
+  image: url(:/Application/img/ArrowRight.png);
+}
+QScrollBar#SmallScrollBar::sub-line:horizontal {
+  border: 1px solid %3;
+  background: %2;
+  width: 9px;
+  subcontrol-position: left;
+  subcontrol-origin: margin;
+  image: url(:/Application/img/ArrowLeft.png);
+}
+QScrollBar#SmallScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+  background: none;
+}
+
+QScrollBar#SmallScrollBar:vertical {
+  border: 1px solid transparent;
+  background: transparent;
+  width: 10px;
+  margin: 10px 0 10px 0;
+}
+QScrollBar#SmallScrollBar::handle:vertical {
+  border: 1px solid %3;
+  background: %2;
+  min-height: 30px;
+  margin: 1px -1px 1px -1px;
+}
+QScrollBar#SmallScrollBar::add-line:vertical {
+  border: 1px solid %3;
+  background: %2;
+  height: 9px;
+  subcontrol-position: bottom;
+  subcontrol-origin: margin;
+  image: url(:/Application/img/ArrowDown.png);
+}
+QScrollBar#SmallScrollBar::sub-line:vertical {
+  border: 1px solid %3;
+  background: %2;
+  height: 9px;
+  subcontrol-position: top;
+  subcontrol-origin: margin;
+  image: url(:/Application/img/ArrowUp.png);
+}
+QScrollBar#SmallScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+  background: none;
+}
+
+QSplitter::handle:horizontal {
+  margin-left: 1px;
+  margin-right: 1px;
+  width: 2px;
+  background-color: %1;
+}
+QSplitter::handle:vertical {
+  margin-top: 1px;
+  margin-bottom: 1px;
+  height: 2px;
+  background-color: %1;
+}
+QSplitter::handle:vertical {
+  margin-top: 1px;
+  margin-bottom: 1px;
+  height: 2px;
+  background-color: %1;
+}
+
+QStatusBar {
+  border: 1px solid %3;
+  background: %1;
+}
+
+QTableView {
+  border: 1px solid %3;
+}
+
+QTextBrowser {
+  border: 1px solid %3;
+}
+
+QTreeView {
+  border: 1px solid %3;
+}
+
+
+Application {
+  background: #ffffff;
+}
+
+FilterTextEdit {
+  background: #ffffff;
+  selection-color: black;
+  selection-background-color: #b7dbff;
+  border: 1px solid %3;
+}
+FilterTextEdit:disabled {
+  border: 1px solid #afafaf;
+}
+
+ToolBox>QScrollArea {
+  padding: 2px; 
+  border:1px solid %4; 
+  background: %1;
+}
+ToolBoxItemHeader {
+  border: 1px solid %4; 
+  background: %2;
+}
+
+SearchWidget {
+  background: %1;
+  border: 1px solid %4;
+}
+
+HighlightingWidget {
+  background: %1;
+  border: 1px solid %4;
+}
+
+MarkWidget {
+  background: %1;
+  border: 1px solid %4;
+}
+
+SearchProgressDialog {
+  border: 1px solid %4;
+}
+
+AboutQtDialog {
+  border: 1px solid %4;
+}
+
+QFrame#CentralWidget {
+  background: #ffffff;
+}
+QFrame#TraceViewerMargin {
+  background: #f8f8f8; 
+}
+QFrame#TraceViewerViewport {
+  border: 1px solid %3;
+}
+
+QLabel#FontDialogSampleText {
+  background: #ffffff; 
+  border:1px solid %3;
+}
