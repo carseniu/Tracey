@@ -20,6 +20,7 @@ public:
   void addOperator(const QChar& filterOperator);
   FilterData* getFilterData() const;
   FilterInfo getFilterInfo();
+  FilterPanel* getFilterPanel();
   Type getType() const;
   void goTo(int line, int column) override;
   void toggleStartStop() override;

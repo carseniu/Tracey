@@ -113,7 +113,7 @@ int Viewport::getCursorLine() const
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 int Viewport::getLineSize() const
 {
-  return width() / fontMetrics().width(" ") - 15;
+  return width() / fontMetrics().horizontalAdvance(" ") - 15;
 }
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -358,7 +358,7 @@ void Viewport::update(int startLine)
       page.append('\n');
     }
 
-    int lineSize = fontMetrics().width(lines.at(i));
+    int lineSize = fontMetrics().horizontalAdvance(lines.at(i));
     if (lineSize > maxLineSize)
     {
       maxLineSize = lineSize;
@@ -405,7 +405,7 @@ void Viewport::updateHorizontalScrollBarMaximum()
 {
   if (maxLineIndex != -1)
   {
-    int lineSize = fontMetrics().width(traceData->getLine(maxLineIndex));
+    int lineSize = fontMetrics().horizontalAdvance(traceData->getLine(maxLineIndex));
 
     int horizontalScrollBarMaximum = lineSize - width() + margin->width() + horizontalScrollBarOffset;
     if (horizontalScrollBarMaximum < 0)
@@ -718,7 +718,7 @@ void Viewport::wheelEvent(QWheelEvent* event)
 
     int startIndex = fontSizes.indexOf(newFont.pointSize());
 
-    if (event->delta() > 0)
+    if (event->pixelDelta().y() > 0)
     {
       if (startIndex < fontSizes.size() - 1)
       {
@@ -738,7 +738,7 @@ void Viewport::wheelEvent(QWheelEvent* event)
   // Scroll
   else
   {
-    if (event->delta() > 0)
+    if (event->pixelDelta().y() > 0)
     {
       emit scrollUpRequested();
     }
@@ -1523,7 +1523,7 @@ void Viewport::updateMargin()
 
   for (int i = startLine; i <= endLine; ++i)
   {
-    int fontWidth = fontMetrics().width(traceData->getLineNumber(i, sourceLines));
+    int fontWidth = fontMetrics().horizontalAdvance(traceData->getLineNumber(i, sourceLines));
 
     if (fontWidth > width)
     {

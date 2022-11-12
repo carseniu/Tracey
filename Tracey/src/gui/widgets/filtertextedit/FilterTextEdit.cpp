@@ -24,7 +24,7 @@ FilterTextEdit::FilterTextEdit(QWidget* parent) :
   setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
   setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
   setFont(QFont("Courier New", 10));
-  setTabStopWidth(fontMetrics().averageCharWidth() * 4);
+  setTabStopDistance(fontMetrics().averageCharWidth() * 4);
 
   filterHighlighter = new FilterHighlighter(this);
   filterHighlighter->setFont(font());

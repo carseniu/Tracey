@@ -25,7 +25,7 @@ MarkWidget::MarkWidget(QWidget* parent) :
   markList->setVerticalScrollBar(new QScrollBar(Qt::Vertical, markList));
 
   QVBoxLayout* layout = new QVBoxLayout(this);
-  layout->setMargin(2);
+  layout->setContentsMargins(2, 2, 2, 2);
   layout->setSpacing(2);
   layout->addWidget(markList);
 
@@ -50,7 +50,7 @@ void MarkWidget::setMarks(const QVector<Mark>& marks, int newIndex)
     return;
   }
 
-  int indexSize = fontMetrics().width(QString::number(marks.last().index)) + 10;
+  int indexSize = fontMetrics().horizontalAdvance(QString::number(marks.last().index)) + 10;
 
   for (const Mark& mark : marks)
   {

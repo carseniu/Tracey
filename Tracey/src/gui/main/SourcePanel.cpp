@@ -134,7 +134,7 @@ SourcePanel::SourcePanel(SourceData* sourceData, const TraceInfo& traceInfo, Hig
 
   // MAIN LAYOUT
   QHBoxLayout* topLayout = new QHBoxLayout;
-  topLayout->setMargin(0);
+  topLayout->setContentsMargins(0, 0, 0, 0);
   topLayout->setSpacing(5);
   topLayout->addWidget(deleteSourceHistoryButton);
   topLayout->addWidget(sourceComboBox);
@@ -144,7 +144,7 @@ SourcePanel::SourcePanel(SourceData* sourceData, const TraceInfo& traceInfo, Hig
   topLayout->addWidget(getHighlightingWidget());
 
   QHBoxLayout* bottomLayout = new QHBoxLayout;
-  bottomLayout->setMargin(0);
+  bottomLayout->setContentsMargins(0, 0, 0, 0);
   bottomLayout->setSpacing(15);
   bottomLayout->addWidget(fileContentGroupBox);
   bottomLayout->addWidget(lineSizeGroupBox);

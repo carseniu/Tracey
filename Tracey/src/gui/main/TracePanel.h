@@ -2,6 +2,8 @@
 
 #include <QFrame>
 
+#include "src/gui/core/HighlightingGroup.h"
+
 class ComboBox;
 class HighlightingData;
 class HighlightingGroup;

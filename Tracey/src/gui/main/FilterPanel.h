@@ -32,6 +32,7 @@ public:
   bool isMatchCase() const;
   bool isSourceLines() const;
   bool isWholeWord() const;
+  void setFocus();
   void toggleStartStop();
   void updateShortcuts() override;
 

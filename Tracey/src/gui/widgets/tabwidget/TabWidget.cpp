@@ -32,7 +32,7 @@ TabWidget::TabWidget(QWidget* parent) :
   contentLayout = new QStackedLayout(contentWidget);
 
   QVBoxLayout* mainLayout = new QVBoxLayout(this);  
-  mainLayout->setMargin(0);
+  mainLayout->setContentsMargins(0, 0, 0, 0);
   mainLayout->setSpacing(0);
   mainLayout->addWidget(tabBar);
   mainLayout->addWidget(contentWidget);
@@ -223,7 +223,7 @@ void TabWidget::onTabSwapped(int newIndex, int oldIndex)
   delete contentLayout;
   contentLayout = new QStackedLayout(contentWidget);
 
-  widgetList.swap(oldIndex, newIndex);
+  widgetList.swapItemsAt(oldIndex, newIndex);
 
   for (int i = 0; i < widgetList.size(); ++i)
   {

@@ -249,7 +249,7 @@ void TabBar::onItemMoved(const QPoint& localPosition, const QPoint& position)
 
         newIndex = i;
         int swapIndex = items.indexOf(movingItem);
-        items.swap(i, swapIndex);
+        items.swapItemsAt(i, swapIndex);
 
         emit tabSwapped(i, swapIndex);
 

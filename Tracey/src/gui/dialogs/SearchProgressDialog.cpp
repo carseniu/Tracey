@@ -45,7 +45,7 @@ SearchProgressDialog::SearchProgressDialog(QWidget* parent) :
   connect(okButton, SIGNAL(clicked()), this, SLOT(accept()));
 
   QVBoxLayout* mainLayout = new QVBoxLayout(this);
-  mainLayout->setMargin(15);
+  mainLayout->setContentsMargins(15, 15, 15, 15);
   mainLayout->setSpacing(5);
   mainLayout->addWidget(titleLabel, 0, Qt::AlignCenter);
   mainLayout->addWidget(progressBar, 0, Qt::AlignCenter);

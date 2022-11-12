@@ -28,7 +28,7 @@ TracePanel::TracePanel(HighlightingData* highlightingData, TraceWidget* parent) 
 
   highlightingWidget = new QWidget(this);
   QHBoxLayout* highlightingLayout = new QHBoxLayout(highlightingWidget);
-  highlightingLayout->setMargin(0);
+  highlightingLayout->setContentsMargins(0, 0, 0, 0);
   highlightingLayout->setSpacing(5);
   highlightingLayout->addWidget(highlightingLabel);
   highlightingLayout->addWidget(highlightingComboBox);

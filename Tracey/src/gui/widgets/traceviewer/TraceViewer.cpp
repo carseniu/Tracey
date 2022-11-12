@@ -41,12 +41,12 @@ TraceViewer::TraceViewer(TraceData* traceData, QWidget* parent) :
   viewportFrame->setObjectName("TraceViewerViewport");
 
   QHBoxLayout* viewportFrameLayout = new QHBoxLayout(viewportFrame);
-  viewportFrameLayout->setMargin(0);
+  viewportFrameLayout->setContentsMargins(0, 0, 0, 0);
   viewportFrameLayout->setSpacing(0);
   viewportFrameLayout->addWidget(viewport);
 
   QGridLayout*  layout = new QGridLayout(this);
-  layout->setMargin(0);
+  layout->setContentsMargins(0, 0, 0, 0);
   layout->setSpacing(1);
   layout->addWidget(viewportFrame, 0, 0, 1, 1);
   layout->addWidget(verticalScrollBar, 0, 1, 1, 1);

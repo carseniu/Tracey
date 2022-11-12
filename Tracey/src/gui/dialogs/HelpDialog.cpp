@@ -14,6 +14,7 @@
 #include <QLineEdit>
 #include <QSplitter>
 #include <QTabWidget>
+#include <QTextDocument>
 
 
 //===================================================================================================================================================================================================//
@@ -31,6 +32,8 @@ HelpDialog::HelpDialog()
 
   helpEngine = new QHelpEngine("Tracey.qhc");
   connect(helpEngine->searchEngine(), &QHelpSearchEngine::searchingFinished, this, &HelpDialog::onSearchFinished);
+  connect(helpEngine->contentWidget(), &QHelpContentWidget::linkActivated, this, &HelpDialog::onLinkActivated);
+  connect(helpEngine->indexWidget(), &QHelpIndexWidget::linkActivated, this, &HelpDialog::onLinkActivated);
 
   QHelpContentModel* contentModel = qobject_cast<QHelpContentModel*>(helpEngine->contentModel());
   connect(contentModel, &QHelpContentModel::contentsCreated, this, &HelpDialog::onContentsCreated);
@@ -49,10 +52,11 @@ HelpDialog::HelpDialog()
   resultWidget = new QTextBrowser(this);
   resultWidget->setContextMenuPolicy(Qt::NoContextMenu);
   resultWidget->setOpenLinks(false);
+  connect(resultWidget, &QTextBrowser::anchorClicked, this, &HelpDialog::onLinkActivated);
 
   QWidget* searchWidget = new QWidget(this);
   QVBoxLayout* searchLayout = new QVBoxLayout(searchWidget);
-  searchLayout->setMargin(0);
+  searchLayout->setContentsMargins(0, 0, 0, 0);
   searchLayout->setSpacing(5);
   searchLayout->addWidget(searchLineEdit);
   searchLayout->addWidget(resultWidget);
@@ -65,16 +69,14 @@ HelpDialog::HelpDialog()
 
   HelpBrowser* helpBrowser = new HelpBrowser(helpEngine);
   helpBrowser->setSource(QUrl("qthelp://zelorra.tracey/doc/1.1.what_is_tracey.html"));
-  connect(helpEngine->contentWidget(), &QHelpContentWidget::linkActivated, helpBrowser, &HelpBrowser::setSource);
-  connect(helpEngine->indexWidget(), &QHelpIndexWidget::linkActivated, helpBrowser, &HelpBrowser::setSource);
-  connect(resultWidget, &QTextBrowser::anchorClicked, helpBrowser, &HelpBrowser::setSource);
+  connect(this, &HelpDialog::linkActivated, helpBrowser, &HelpBrowser::setSource);
 
   QSplitter* splitter = new QSplitter(Qt::Horizontal, this);
   splitter->insertWidget(0, tabWidget);
   splitter->insertWidget(1, helpBrowser);
 
   QHBoxLayout* mainLayout = new QHBoxLayout(this);
-  mainLayout->setMargin(5);
+  mainLayout->setContentsMargins(5, 5, 5, 5);
   mainLayout->addWidget(splitter);
 }
 
@@ -97,6 +99,14 @@ void HelpDialog::onContentsCreated()
     helpEngine->searchEngine()->reindexDocumentation();
   }
 }
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+void HelpDialog::onLinkActivated(const QUrl& url)
+{
+  emit linkActivated(url, QTextDocument::UnknownResource);
+}
+
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//

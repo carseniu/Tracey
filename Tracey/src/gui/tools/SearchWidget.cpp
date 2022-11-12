@@ -60,7 +60,7 @@ SearchWidget::SearchWidget(QWidget* parent) :
 
 
   QHBoxLayout* findLayout = new QHBoxLayout;
-  findLayout->setMargin(0);
+  findLayout->setContentsMargins(0, 0, 0, 0);
   findLayout->setSpacing(5);
   findLayout->addWidget(deleteSearchHistoryButton);
   findLayout->addWidget(findComboBox);
@@ -116,7 +116,7 @@ SearchWidget::SearchWidget(QWidget* parent) :
   connect(countButton, &QPushButton::clicked, this, &SearchWidget::count);
 
   QVBoxLayout* searchButtonsLayout = new QVBoxLayout;
-  searchButtonsLayout->setMargin(0);
+  searchButtonsLayout->setContentsMargins(0, 0, 0, 0);
   searchButtonsLayout->setSpacing(5);
   searchButtonsLayout->addWidget(findNextButton);
   searchButtonsLayout->addWidget(findPreviousButton);
@@ -145,7 +145,7 @@ SearchWidget::SearchWidget(QWidget* parent) :
   connect(goToButton, &QPushButton::clicked, this, &SearchWidget::goTo);
 
   QHBoxLayout* goToLayout = new QHBoxLayout;
-  goToLayout->setMargin(0);
+  goToLayout->setContentsMargins(0, 0, 0, 0);
   goToLayout->setSpacing(20);
   goToLayout->addWidget(goToLabel);
   goToLayout->addWidget(goToLineEdit);
@@ -154,7 +154,7 @@ SearchWidget::SearchWidget(QWidget* parent) :
 
   // MAIN LAYOUT
   QGridLayout* layout = new QGridLayout(this);
-  layout->setMargin(10);
+  layout->setContentsMargins(10, 10, 10, 10);
   layout->setSpacing(10);
   layout->addLayout(findLayout, 0, 0, 1, 3);
   layout->addWidget(matchCaseCheckBox, 1, 0, 1, 1, Qt::AlignBottom);

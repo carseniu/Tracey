@@ -20,7 +20,7 @@ AboutTraceyDialog::AboutTraceyDialog(QWidget* parent) :
   pictureLabel->setPixmap(QPixmap(":/Application/img/Tracey.png"));
 
   QHBoxLayout* layout = new QHBoxLayout(this);
-  layout->setMargin(0);
+  layout->setContentsMargins(0, 0, 0, 0);
   layout->setSpacing(0);
   layout->addWidget(pictureLabel);
 }

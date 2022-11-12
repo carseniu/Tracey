@@ -35,7 +35,7 @@ TraceWindow::TraceWindow(SourceData* sourceData, HighlightingData* highlightingD
   traceWidgetTabWidget = new TraceTabWidget(this);
 
   QHBoxLayout* layout = new QHBoxLayout(this);
-  layout->setMargin(0);
+  layout->setContentsMargins(0, 0, 0, 0);
   layout->addWidget(traceWidgetTabWidget);
 
   sourceWidget = new SourceWidget(sourceData, highlightingData, historyModel, traceInfo, this);
@@ -72,6 +72,8 @@ FilterWidget* TraceWindow::addFilterWidget(FilterData* filterData, const FilterI
   connect(filterWidget, &FilterWidget::markAllInTraceRequested, this, &TraceWindow::markAllInTrace);
   connect(filterWidget, &FilterWidget::deleteTraceWidgetRequested, this, &TraceWindow::deleteFilter);
   connect(filterWidget, &FilterWidget::deleteTraceWindowRequested, this, &TraceWindow::deleteTraceWindowRequested);
+
+  filterWidget->getFilterPanel()->setFocus();
 
   return filterWidget;
 }

@@ -2,6 +2,8 @@
 
 #include <QPushButton>
 
+class QEnterEvent;
+
 
 class IconButton : public QPushButton
 {
@@ -17,11 +19,11 @@ public:
   IconButton(const QIcon& icon, QWidget* parent);
 
 protected:
-  void changeEvent(QEvent * event) override;
-  void enterEvent(QEvent *event) override;
-  void leaveEvent(QEvent *event) override;
-  void mousePressEvent(QMouseEvent *event) override;
-  void mouseReleaseEvent(QMouseEvent *event) override;
+  void changeEvent(QEvent* event) override;
+  void enterEvent(QEnterEvent* event) override;
+  void leaveEvent(QEvent* event) override;
+  void mousePressEvent(QMouseEvent* event) override;
+  void mouseReleaseEvent(QMouseEvent* event) override;
   void paintEvent(QPaintEvent* event) override;
 
 private:

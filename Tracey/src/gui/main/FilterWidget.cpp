@@ -47,6 +47,8 @@ FilterWidget::FilterWidget(FilterData* filterData, HighlightingData* highlightin
 
   connect(filterPanel, &FilterPanel::saveRequested, this, &FilterWidget::save);
   connect(filterPanel, &FilterPanel::sourceLinesToggled, getTraceViewer(), &TraceViewer::showSourceLines);
+
+  filterPanel->setFocus();
 }
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -85,6 +87,13 @@ FilterInfo FilterWidget::getFilterInfo()
   filterInfo.operatorPositions = filterPanel->getOperatorPositions();
 
   return filterInfo;
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+FilterPanel* FilterWidget::getFilterPanel()
+{
+  return filterPanel;
 }
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//

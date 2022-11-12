@@ -4,6 +4,8 @@
 
 #include<QVector>
 
+#include "src/gui/core/HighlightingGroup.h"
+
 typedef QPair<QString, QString> ColorPair;
 typedef QList<ColorPair> ColorPairList;
 

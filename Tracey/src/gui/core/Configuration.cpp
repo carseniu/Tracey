@@ -922,7 +922,7 @@ void Configuration::createDatabase() const
   }
 
   QByteArray sql = script.readAll();
-  QStringList queries = QString(sql).split(QChar(';'), QString::SkipEmptyParts);
+  QStringList queries = QString(sql).split(QChar(';'), Qt::SkipEmptyParts);
 
   QSqlQuery query;
 

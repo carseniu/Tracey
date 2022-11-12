@@ -2,6 +2,8 @@
 
 #include <QFrame>
 
+#include "src/gui/core/HighlightingRule.h"
+
 class HighlightingRule;
 class StatusBarInfo;
 class TraceData;

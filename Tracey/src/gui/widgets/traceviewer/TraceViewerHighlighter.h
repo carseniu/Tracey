@@ -1,8 +1,8 @@
 #pragma once
 
-#include "src/gui/core/HighlightingRule.h"
-
 #include <QSyntaxHighlighter>
+
+class HighlightingRule;
 
 
 class TraceViewerHighlighter : public QSyntaxHighlighter
@@ -18,7 +18,6 @@ protected:
   virtual void highlightBlock(const QString& text);
 
 private:
-  void highlightDoubleClickSelection(const QString& text);
   void highlightRule(const QString& text, HighlightingRule* rule);
 
   QVector<HighlightingRule*> rules;

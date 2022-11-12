@@ -164,7 +164,7 @@ FilterPanel::FilterPanel(FilterData* filterData, const FilterInfo& filterInfo, H
   controlsLayout->addWidget(getHighlightingWidget());
 
   QVBoxLayout* filterLayout = new QVBoxLayout;
-  filterLayout->setMargin(0);
+  filterLayout->setContentsMargins(0, 0, 0, 0);
   filterLayout->setSpacing(3);
   filterLayout->addWidget(filterTextEdit);
   filterLayout->addWidget(errorLabel);
@@ -177,7 +177,7 @@ FilterPanel::FilterPanel(FilterData* filterData, const FilterInfo& filterInfo, H
   bottomLayout->addWidget(extraLinesGroupBox);
 
   QVBoxLayout* mainLayout = new QVBoxLayout(this);
-  mainLayout->setMargin(0);
+  mainLayout->setContentsMargins(0, 0, 0, 0);
   mainLayout->setSpacing(0);
   mainLayout->addLayout(controlsLayout);
   mainLayout->addSpacing(3);
@@ -273,6 +273,14 @@ bool FilterPanel::isSourceLines() const
 bool FilterPanel::isWholeWord() const
 {
   return wholeWordButton->isChecked();
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+void FilterPanel::setFocus()
+{
+  filterTextEdit->setFocus(Qt::ActiveWindowFocusReason);
+  filterTextEdit->activateWindow();
 }
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//

@@ -57,7 +57,7 @@ StatusBarInfo::StatusBarInfo(QWidget* parent) :
 
 
   QHBoxLayout* layout = new QHBoxLayout(this);
-  layout->setMargin(0);
+  layout->setContentsMargins(0, 0, 0, 0);
   layout->setSpacing(0);
   layout->addWidget(separator1);
   layout->addSpacing(5);

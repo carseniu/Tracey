@@ -17,11 +17,11 @@
 
 #include <QApplication>
 #include <QDebug>
-#include <QDesktopWidget>
 #include <QHBoxLayout>
 #include <QResizeEvent>
+#include <QScreen>
 #include <QSplitter>
-#include <QTextCodec>
+//#include <QTextCodec>
 
 using namespace Tracey;
 
@@ -43,7 +43,7 @@ Application::Application(QWidget* parent) :
 
   if (geometry.topLeft() == QPoint(-6666, -6666))
   {
-    QRect screenGeometry = QApplication::desktop()->availableGeometry();
+    QRect screenGeometry = QGuiApplication::primaryScreen()->availableGeometry();
     int x = (screenGeometry.width() - width()) / 2;
     int y = (screenGeometry.height() - height()) / 2;
 
@@ -140,8 +140,6 @@ void Application::showEvent(QShowEvent* event)
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 void Application::init()
 {
-  QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
-
   highlightingData = new HighlightingData(this);
 
   traceArea = new TraceArea(highlightingData, this);
@@ -170,7 +168,7 @@ void Application::init()
   centralWidget->setObjectName("CentralWidget");
 
   QHBoxLayout* mainLayout = new QHBoxLayout(centralWidget);
-  mainLayout->setMargin(5);
+  mainLayout->setContentsMargins(5, 5, 5, 5);
   mainLayout->addWidget(splitter);
 
   setCentralWidget(centralWidget);

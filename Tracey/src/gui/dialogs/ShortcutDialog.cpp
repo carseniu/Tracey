@@ -104,7 +104,7 @@ ShortcutDialog::ShortcutDialog(const QList<QAction*>& actionList, int actionInde
   actionTextLabel->setStyleSheet("font-weight:bold");
 
   QHBoxLayout* actionLayout = new QHBoxLayout;
-  actionLayout->setMargin(0);
+  actionLayout->setContentsMargins(0, 0, 0, 0);
   actionLayout->setSpacing(3);
   actionLayout->addStretch();
   actionLayout->addWidget(actionIconLabel);
@@ -126,7 +126,7 @@ ShortcutDialog::ShortcutDialog(const QList<QAction*>& actionList, int actionInde
   existingActionTextLabel->setVisible(false);
 
   QHBoxLayout* existingActionLayout = new QHBoxLayout;
-  existingActionLayout->setMargin(0);
+  existingActionLayout->setContentsMargins(0, 0, 0, 0);
   existingActionLayout->setSpacing(3);
   existingActionLayout->addStretch();
   existingActionLayout->addWidget(existingActionIconLabel);
@@ -146,7 +146,7 @@ ShortcutDialog::ShortcutDialog(const QList<QAction*>& actionList, int actionInde
   connect(cancelButton, &QPushButton::clicked, this, &ShortcutDialog::reject);
 
   QHBoxLayout* buttonLayout = new QHBoxLayout;
-  buttonLayout->setMargin(0);
+  buttonLayout->setContentsMargins(0, 0, 0, 0);
   buttonLayout->setSpacing(20);
   buttonLayout->addStretch();
   buttonLayout->addWidget(okButton);

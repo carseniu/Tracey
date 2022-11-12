@@ -117,7 +117,7 @@ SettingsDialog::SettingsDialog(Application* application) :
   buttonWidget->setFixedHeight(30);
 
   QHBoxLayout* buttonLayout = new QHBoxLayout(buttonWidget);
-  buttonLayout->setMargin(0);
+  buttonLayout->setContentsMargins(0, 0, 0, 0);
   buttonLayout->setSpacing(10);
   buttonLayout->addStretch();
   buttonLayout->addWidget(okButton);
@@ -125,7 +125,7 @@ SettingsDialog::SettingsDialog(Application* application) :
 
 
   QVBoxLayout* mainLayout = new QVBoxLayout(this);
-  mainLayout->setMargin(5);
+  mainLayout->setContentsMargins(5, 5, 5, 5);
   mainLayout->setSpacing(5);
   mainLayout->addWidget(contentTabWidget);
   mainLayout->addWidget(buttonWidget);

@@ -77,16 +77,16 @@ void ItemDelegateList::paint(QPainter* painter, const QStyleOptionViewItem& opti
     {
       if (icon.isNull())
       {
-        bounds = QRect(rect.left() + 1, rect.top() + 1, fontMetrics.width(index.data().toString()) + 5, rect.height() - 2);
+        bounds = QRect(rect.left() + 1, rect.top() + 1, fontMetrics.horizontalAdvance(index.data().toString()) + 5, rect.height() - 2);
       }
       else
       {
-        bounds = QRect(rect.left() + 1, rect.top() + 1, fontMetrics.width(index.data().toString()) + height + 5, rect.height() - 2);
+        bounds = QRect(rect.left() + 1, rect.top() + 1, fontMetrics.horizontalAdvance(index.data().toString()) + height + 5, rect.height() - 2);
       }
     }
     else if (selectionType == Text)
     {
-      bounds = QRect(rect.left() + 1 + height, rect.top() + 1, fontMetrics.width(index.data().toString()) + 5, rect.height() - 2);
+      bounds = QRect(rect.left() + 1 + height, rect.top() + 1, fontMetrics.horizontalAdvance(index.data().toString()) + 5, rect.height() - 2);
     }
   }
 

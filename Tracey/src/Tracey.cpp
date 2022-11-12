@@ -92,10 +92,10 @@ QPixmap Tracey::setSaturation(const QPixmap& pixmap, qreal level)
     {
       QColor color = image.pixelColor(i, j);
 
-      qreal h;
-      qreal s;
-      qreal l;
-      qreal a;
+      float h;
+      float s;
+      float l;
+      float a;
 
       color.getHslF(&h, &s, &l, &a);
       color.setHslF(h, s * level, l, a);

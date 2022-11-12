@@ -16,7 +16,7 @@
 AboutQtDialog::AboutQtDialog(QWidget* parent) :
   QDialog(parent)
 {
-  setFixedSize(500, 500);
+  setFixedSize(550, 520);
   setWindowFlags(Qt::FramelessWindowHint | Qt::Dialog);
   setAttribute(Qt::WA_DeleteOnClose);
 
@@ -38,7 +38,7 @@ AboutQtDialog::AboutQtDialog(QWidget* parent) :
   connect(okButton, SIGNAL(clicked()), this, SLOT(accept()));
 
   QGridLayout* layout = new QGridLayout(this);
-  layout->setMargin(10);
+  layout->setContentsMargins(10, 10, 10, 10);
   layout->setVerticalSpacing(10);
   layout->addWidget(qtLogoLabel, 0, 0, 1, 1, Qt::AlignTop);
   layout->addWidget(aboutQtTextEdit, 0, 1, 1, 1);

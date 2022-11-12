@@ -176,7 +176,7 @@ void TraceWidget::setTracePanel(TracePanel* tracePanel)
 
   QWidget* bottomPanel = new QWidget(this);
   QVBoxLayout* bottomPanelLayout = new QVBoxLayout(bottomPanel);
-  bottomPanelLayout->setMargin(0);
+  bottomPanelLayout->setContentsMargins(0, 0, 0, 0);
   bottomPanelLayout->setSpacing(0);
   bottomPanelLayout->addWidget(progressBar);
   bottomPanelLayout->addWidget(traceViewer);
@@ -188,7 +188,7 @@ void TraceWidget::setTracePanel(TracePanel* tracePanel)
   splitter->setSizes(QList<int>() << 200 << 10000);
 
   QHBoxLayout* layout = new QHBoxLayout(this);
-  layout->setMargin(0);
+  layout->setContentsMargins(0, 0, 0, 0);
   layout->addWidget(splitter);
 
   connect(tracePanel, &TracePanel::highlightingGroupChanged, this, &TraceWidget::processHighlightingGroupChanged, Qt::QueuedConnection);

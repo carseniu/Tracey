@@ -45,7 +45,7 @@ FontDialog::FontDialog(const QFont& font, bool onlyMonospacedFonts, bool showMon
   sizeList->setVerticalScrollBar(sizeListScrollBar);
 
   QHBoxLayout* topLayout = new QHBoxLayout;
-  topLayout->setMargin(0);
+  topLayout->setContentsMargins(0, 0, 0, 0);
   topLayout->setSpacing(5);
   topLayout->addWidget(familyList);
   topLayout->addWidget(styleList);
@@ -92,7 +92,7 @@ FontDialog::FontDialog(const QFont& font, bool onlyMonospacedFonts, bool showMon
 
   // All together now, bitch
   QVBoxLayout* layout = new QVBoxLayout(this);
-  layout->setMargin(3);
+  layout->setContentsMargins(3, 3, 3, 3);
   layout->setSpacing(5);
   layout->addLayout(topLayout);
   layout->addWidget(monospacedCheckBox);
@@ -137,7 +137,7 @@ QFont FontDialog::createFont()
   QString style = styleList->currentItem()->text();
 
   font.setFamily(family);
-  font.setWeight(fdb.weight(family, style));
+  font.setWeight((QFont::Weight)fdb.weight(family, style));
   font.setItalic (fdb.italic(family, style));
   font.setPointSize(sizeList->currentItem()->text().toInt());
 

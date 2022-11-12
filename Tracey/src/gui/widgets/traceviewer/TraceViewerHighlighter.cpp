@@ -1,5 +1,7 @@
 #include "src/gui/widgets/traceviewer/TraceViewerHighlighter.h"
 
+#include "src/gui/core/HighlightingRule.h"
+
 #include <QTextDocument>
 
 

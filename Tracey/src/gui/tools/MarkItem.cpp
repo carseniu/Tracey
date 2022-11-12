@@ -30,7 +30,7 @@ MarkItem::MarkItem(int index, const QString& text, int indexSize, QWidget* paren
   textLabel->setFont(QFont("Courier New", 8));
 
   QHBoxLayout* layout = new QHBoxLayout(this);
-  layout->setMargin(0);
+  layout->setContentsMargins(0, 0, 0, 0);
   layout->setSpacing(5);
   layout->addWidget(indexLabel);
   layout->addWidget(textLabel);

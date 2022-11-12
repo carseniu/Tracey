@@ -39,7 +39,7 @@ TraceArea::TraceArea(HighlightingData* highlightingData, Application* applicatio
   traceWindowTabWidget->setTabBarBackground("#ffffff");
 
   QHBoxLayout* layout = new QHBoxLayout(this);
-  layout->setMargin(0);
+  layout->setContentsMargins(0, 0, 0, 0);
   layout->addWidget(traceWindowTabWidget);
 
   connect(traceWindowTabWidget, &TabWidget::currentIndexChanged, this, &TraceArea::onTraceWindowChanged);

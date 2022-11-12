@@ -20,6 +20,8 @@ int main(int argc, char *argv[])
   QApplication a(argc, argv);
   QApplication::setFont(QFont("Segoe UI", 8));
 
+  QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+
   Application application;
   QObject::connect(&SingleAppManager::instance(), &SingleAppManager::anotherAppStarted, &application, &Application::showApplication);
 

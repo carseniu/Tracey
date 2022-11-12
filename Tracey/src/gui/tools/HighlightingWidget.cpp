@@ -47,7 +47,7 @@ HighlightingWidget::HighlightingWidget(Application* application) :
   deleteGroupButton->setEnabled(false);
 
   QHBoxLayout* groupToolBarLayout = new QHBoxLayout;
-  groupToolBarLayout->setMargin(0);
+  groupToolBarLayout->setContentsMargins(0, 0, 0, 0);
   groupToolBarLayout->setSpacing(1);
   groupToolBarLayout->addWidget(addGroupButton);
   groupToolBarLayout->addWidget(deleteGroupButton);
@@ -103,7 +103,7 @@ HighlightingWidget::HighlightingWidget(Application* application) :
   findNextButton->setToolTip(tr("Find Next"));
 
   QHBoxLayout* itemToolBarLayout = new QHBoxLayout;
-  itemToolBarLayout->setMargin(0);
+  itemToolBarLayout->setContentsMargins(0, 0, 0, 0);
   itemToolBarLayout->setSpacing(1);
   itemToolBarLayout->addWidget(addRuleButton);
   itemToolBarLayout->addWidget(deleteRuleButton);
@@ -131,7 +131,7 @@ HighlightingWidget::HighlightingWidget(Application* application) :
 
   // MAIN LAYOUT
   QVBoxLayout* layout = new QVBoxLayout(this);
-  layout->setMargin(2);
+  layout->setContentsMargins(2, 2, 2, 2);
   layout->setSpacing(2);
   layout->addLayout(groupToolBarLayout);
   layout->addWidget(groupComboBox);
@@ -197,7 +197,7 @@ void HighlightingWidget::enableRuleToolbar()
 QColor HighlightingWidget::getColor(const QString& currentColor, const QString& title)
 {
   QColorDialog* colorDialog = new QColorDialog(QColor(currentColor), this);
-  colorDialog->setAttribute(Qt::WA_DeleteOnClose, true);
+  //colorDialog->setAttribute(Qt::WA_DeleteOnClose, true);
   colorDialog->setWindowTitle(title);
   resizeDialogButton(colorDialog, QDialogButtonBox::Ok, 80, 20);
   resizeDialogButton(colorDialog, QDialogButtonBox::Cancel, 80, 20);

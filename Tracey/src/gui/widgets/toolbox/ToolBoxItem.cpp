@@ -24,7 +24,7 @@ ToolBoxItem::ToolBoxItem(QWidget* widget, const QString& text, QWidget* parent) 
   setMinimumHeight(content->height() + header->height());
 
   QVBoxLayout* layout = new QVBoxLayout(this);
-  layout->setMargin(0);
+  layout->setContentsMargins(0, 0, 0, 0);
   layout->setSpacing(0);
   layout->addWidget(header);
   layout->addWidget(content);
