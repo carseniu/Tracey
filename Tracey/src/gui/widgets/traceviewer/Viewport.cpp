@@ -718,7 +718,7 @@ void Viewport::wheelEvent(QWheelEvent* event)
 
     int startIndex = fontSizes.indexOf(newFont.pointSize());
 
-    if (event->pixelDelta().y() > 0)
+    if (event->angleDelta().y() > 0)
     {
       if (startIndex < fontSizes.size() - 1)
       {
@@ -738,7 +738,7 @@ void Viewport::wheelEvent(QWheelEvent* event)
   // Scroll
   else
   {
-    if (event->pixelDelta().y() > 0)
+    if (event->angleDelta().y() > 0)
     {
       emit scrollUpRequested();
     }
